@@ -2,5 +2,8 @@
 using namespace std;
 
 int main(void) {
-    cout << "Hello World!!" <<"\n"; 
+    int a, b;
+    cin >> a >> b ;
+    cout << "Hello World!!" <<"\n";
+    cout << "a = " << a <<"  "<< "b = " << b;
 }
