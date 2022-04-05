@@ -1,0 +1,4 @@
+﻿  1.c
+C:\Users\gkwla\work\c\과제\historgram\historgram\1.c(34,19): warning C4013: 'rand'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\gkwla\work\c\과제\historgram\historgram\1.c(42,13): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+  historgram.vcxproj -> C:\Users\gkwla\work\c\과제\historgram\x64\Debug\historgram.exe
