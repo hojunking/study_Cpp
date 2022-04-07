@@ -8,18 +8,20 @@
 void normal(int count[], int data[]) {
 	printf("\t[히스토그램]\n");
 	for (int i = 0; i < 10; i++)
-		printf("% d | %d\n", i, count[i]);
+		printf("\t% d | %d\n", i, count[i]);
 }
 
 void graph1(int count[],int data[]) {
 	printf("\n\t[히스토그램 v1.0]\n");
 	for (int i = 0; i < 10; i++) {
 
-		printf("         %d | ", i);
+		printf("  %d | ", i);
 		for (int j = 0; j < count[i]; j++)
 			printf("*");
 		printf("\n");
 	}
+	printf("\n");
+
 }
 
 void graph2(int count[], int data[]) {
@@ -42,7 +44,7 @@ void graph2(int count[], int data[]) {
 		}
 			printf("\n");
 	}
-	printf("      0  1  2  3  4  5  6  7  8  9");
+	printf("      0  1  2  3  4  5  6  7  8  9\n");
 }
 
 void graph3(int count[], int data[]) {
@@ -64,28 +66,26 @@ void graph3(int count[], int data[]) {
 		}
 		printf("\n");
 	}
-	printf("      0  1  2  3  4  5  6  7  8  9");
+	printf("      0  1  2  3  4  5  6  7  8  9\n");
+
 }
 
 void graph4(int count[], int data[], int size, int high) {
 	double top = (double) high / size;
-	printf("%d\n", high);
-	printf("%.2lf\n", top);
-	
 	int i = top*100/2;
 	printf("\n\t[히스토그램 v4.0]\n");
 	for (; 0 <= i; i--) {
 
-		if (i == 0) printf("  +");
+		if (i == 0) printf("      +");
 		else printf("% .2lf | ", (double)i/100*2);
 
-		for (int j = 0; j < 10; j++) {
-			if (i == 0) printf("---");
+		for (int j = 0; j < 10; j++) { 
+			if (i == 0) printf("----");
 			else {
 				double per = (double)count[j] / size;
-				if ((double)i / 100 * 2 + 0.02< per)
+				if ((double)i / 100 * 2 + 0.02 < per )
 					printf("| |");
-				else if ((double)i / 100 * 2 < per)
+				else if ((double)i / 100 * 2 <= per)
 					printf("+-+");
 				else
 					printf("   ");
@@ -93,7 +93,7 @@ void graph4(int count[], int data[], int size, int high) {
 		}
 		printf("\n");
 	}
-	printf("      0  1  2  3  4  5  6  7  8  9");
+	printf("         0  1  2  3  4  5  6  7  8  9\n");
 }
 
 
@@ -103,16 +103,15 @@ int main(void) {
 	int count[COUNTSIZE] = {0};
 	int size;
 	
-	/*while (1) {
+	while (1) {
 		printf("데이터의 개수를 입력하시오 (0:종료, 30 <= x <= 500): ");
 		scanf_s("%d", &size);
 		if (size == 0) break;
 		else if (size < 30) {
 			continue;
 		}
-		else if (size < 500) {*/
-			//srand(time(NULL));
-	size = 30;
+		else if (size < 500) {
+			srand(time(NULL));
 			printf("\t[원 랜덤 데이터]\n");
 			for (int i = 0; i < size; i++)
 				data[i] = rand() % 10;
@@ -133,7 +132,10 @@ int main(void) {
 
 			normal(count, data);
 			//graph2(count, data);
+			graph1(count, data);
+			graph2(count, data);
+			graph3(count, data);
 			graph4(count, data, size, high);
-	/*	}
-	}*/
+		}
+	}
 }
