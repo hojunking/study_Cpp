@@ -9,6 +9,7 @@ void normal(int count[], int data[]) {
 	printf("\t[히스토그램]\n");
 	for (int i = 0; i < 10; i++)
 		printf("\t% d | %d\n", i, count[i]);
+	printf("\n");
 }
 
 void graph1(int count[],int data[]) {
@@ -72,7 +73,8 @@ void graph3(int count[], int data[]) {
 
 void graph4(int count[], int data[], int size, int high) {
 	double top = (double) high / size;
-	int i = top*100/2;
+	int i = (top * 100 + 1) / 2;
+	printf("%d %lf\n", i, top);
 	printf("\n\t[히스토그램 v4.0]\n");
 	for (; 0 <= i; i--) {
 
@@ -83,9 +85,11 @@ void graph4(int count[], int data[], int size, int high) {
 			if (i == 0) printf("----");
 			else {
 				double per = (double)count[j] / size;
-				if ((double)i / 100 * 2 + 0.02 < per )
+				if (per - 0.0199 >= (double)i / 100 * 2) //소수점 반올림 때문
 					printf("| |");
-				else if ((double)i / 100 * 2 <= per)
+				else if (per > (double)i / 100 * 2)
+					printf("+-+");
+				else if (per == (double)i / 100 * 2)
 					printf("+-+");
 				else
 					printf("   ");
@@ -131,7 +135,7 @@ int main(void) {
 
 
 			normal(count, data);
-			//graph2(count, data);
+			graph2(count, data);
 			graph1(count, data);
 			graph2(count, data);
 			graph3(count, data);
