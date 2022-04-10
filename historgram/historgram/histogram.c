@@ -25,22 +25,22 @@ void graph1(int count[],int data[]) {
 
 }
 
-void graph2(int count[], int data[]) {
+void graph2(int count[], int data[], int high) {
 	printf("\n\t[히스토그램 v2.0]\n");
-	for (int i = 9; 0 <= i; i--) {
+	for (int i = high+1; 0 <= i; i--) {
 
 		if (i == 0) printf("  +");
-		else printf("% d |", i);
+		else printf("%2d |", i);
 		
 		for (int j = 0;  j <10 ; j++) {
-			if(i==0) printf("---");
+			if(i==0) printf("----");
 			else{
 				if (i <= count[j])
-					printf("  *");
+					printf("   *");
 				else if (i == count[j] + 1)
-					printf("  %d", count[j]);
+					printf("  %2d", count[j]);
 				else
-					printf("   ");
+					printf("    ");
 			}
 		}
 			printf("\n");
@@ -48,21 +48,21 @@ void graph2(int count[], int data[]) {
 	printf("      0  1  2  3  4  5  6  7  8  9\n");
 }
 
-void graph3(int count[], int data[]) {
+void graph3(int count[], int data[], int high) {
 	printf("\n\t[히스토그램 v3.0]\n");
-	for (int i = 9; 0 <= i; i--) {
+	for (int i = high+1; 0 <= i; i--) {
 
 		if (i == 0) printf("   +");
-		else if(i==5) printf("% d |", i);
+		else if(i==5) printf("%2d |", i);
 		else printf("   |");
 
 		for (int j = 0; j < 10; j++) {
-			if (i == 0) printf("---");
+			if (i == 0) printf("----");
 			else {
 				if (i <= count[j])
-					printf("  %d",i);
+					printf("  %2d",i);
 				else
-					printf("   ");
+					printf("    ");
 			}
 		}
 		printf("\n");
@@ -74,7 +74,6 @@ void graph3(int count[], int data[]) {
 void graph4(int count[], int data[], int size, int high) {
 	double top = (double) high / size;
 	int i = (top * 100 + 1) / 2;
-	printf("%d %lf\n", i, top);
 	printf("\n\t[히스토그램 v4.0]\n");
 	for (; 0 <= i; i--) {
 
@@ -135,10 +134,9 @@ int main(void) {
 
 
 			normal(count, data);
-			graph2(count, data);
 			graph1(count, data);
-			graph2(count, data);
-			graph3(count, data);
+			graph2(count, data, high);
+			graph3(count, data, high);
 			graph4(count, data, size, high);
 		}
 	}
