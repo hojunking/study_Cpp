@@ -1,0 +1,8 @@
+﻿  2020118006_Project2.c
+C:\Users\gkwla\work\c\과제\심화과제4\심화과제2\2020118006_Project2.c(62,16): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gkwla\work\c\과제\심화과제4\심화과제2\2020118006_Project2.c(63,16): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gkwla\work\c\과제\심화과제4\심화과제2\2020118006_Project2.c(78,26): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gkwla\work\c\과제\심화과제4\심화과제2\2020118006_Project2.c(82,31): warning C4244: '-=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gkwla\work\c\과제\심화과제4\심화과제2\2020118006_Project2.c(93,13): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gkwla\work\c\과제\심화과제4\심화과제2\2020118006_Project2.c(104,13): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  심화과제2.vcxproj -> C:\Users\gkwla\work\c\과제\심화과제4\x64\Debug\심화과제4-2.exe
